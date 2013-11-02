@@ -13,7 +13,7 @@ Base64加解密
 3）下面详细说明：
 
 常用的方法，有下面几个：
-+ (NSString*)md5_base64: (NSString *) inPutText;//2013.11.2
++ (NSString*)md5_base64: (NSString *) inPutText;
 + (NSString*)encodeBase64String:(NSString *)input;
 + (NSString*)decodeBase64String:(NSString *)input;
 + (NSString*)encodeBase64Data:(NSData *)data;
