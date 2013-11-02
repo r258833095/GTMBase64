@@ -397,6 +397,18 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 }
 
 #pragma mark - base64
++ (NSString *) md5_base64: (NSString *) inPutText
+{
+    const char *cStr = [inPutText UTF8String];
+    unsigned char digest[16];
+    CC_MD5( cStr, strlen(cStr), digest );
+    
+    NSData * base64 = [[NSData alloc]initWithBytes:digest length:16];
+    base64 = [GTMBase64 encodeData:base64];
+    
+    NSString * output = [[NSString alloc] initWithData:base64 encoding:NSUTF8StringEncoding];
+    return output;
+}
 + (NSString*)encodeBase64String:(NSString * )input {
     NSData *data = [input dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     data = [GTMBase64 encodeData:data];
