@@ -183,6 +183,7 @@
 
 
 #pragma mark - base64
++ (NSString*)md5_base64: (NSString *) inPutText;
 + (NSString*)encodeBase64String:(NSString *)input;
 + (NSString*)decodeBase64String:(NSString *)input;
 + (NSString*)encodeBase64Data:(NSData *)data;
